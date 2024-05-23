@@ -1,5 +1,6 @@
 import bgImage from "../../assets/LandingPage.png";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import PackageCard from "../../components/PackageCard";
 import PromotionCard from "../../components/PromotionCard";
 import Offer from "../../components/Offers";
@@ -38,13 +39,13 @@ function UserHome() {
         </div>
 
         {/* offer section */}
-        <div className="flex flex-col h-96 mb-3 md:mb-8">
+        <div className="h-72  md:h-80 lg:h-96 mb-3 ">
             <div className="flex justify-center md:mt-6">
             <h1 className="font-bold text-[1.5rem] md:text-[3rem]">We Offer Best Services</h1>
             </div>
         <div className="flex justify-evenly my-10">
         <Offer image={guide} head={"Guided Tours"} details={"Have individual Guides for each tour packages."}/>
-        <Offer image={chat} head={"Live Chat"} details={"Chat with the agent live, To know more about the package details."}/>
+        <Offer image={chat} head={"Live Chat"} details={"Chat with the agent live,Know more about package details."}/>
         <Offer image={guide} head={"Guided Tours"} details={"abcdhd"}/>
         <Offer image={guide} head={"Guided Tours"} details={"abcdhd"}/>
         </div>  
@@ -92,7 +93,10 @@ function UserHome() {
 
         {/* package section */}
         <div>
-            <h1 className="flex justify-center items-center text-[2.5rem] text-[#181E4B] mb-12 font-bold">Travel Packages</h1>
+            <div className="flex flex-col justify-center items-center font-bold text-red-500">
+            <p>Packages</p>
+            <h1 className="text-[2.5rem] text-[#181E4B] mb-12 font-bold">Travel Packages</h1>
+            </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-5 gap-x-3 lg:gap-x-9 lg:gap-y-8 lg:ms-7 ">
             <PackageCard/>
             <PackageCard/>
@@ -106,7 +110,12 @@ function UserHome() {
             <PackageCard/>
         </div>
         </div>
-        
+
+        {/* Footer */}
+        <div className="md:mt-16">
+          <Footer/>
+        </div>
+
         </div>
     );
 }

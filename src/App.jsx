@@ -4,7 +4,7 @@ import AdminLogin from "./pages/admin-side/AdminLogin"
 import AdminSignup from "./pages/admin-side/AdminSignup"
 import UserHome from "./pages/user-side/UserHome"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-import Footer from "./components/Footer"
+import CoverPage from "./components/Cover/CoverPage"
 function App() {
 
   return (
@@ -15,7 +15,7 @@ function App() {
       <Route path="/AdminLogin" element={<AdminLogin/>} />
       <Route path="/AdminSignup" element={<AdminSignup/>} />
       <Route path="/UserHome" element={<UserHome/>} />
-      <Route path="/Footer" element={<Footer/>} />
+      <Route path="/Cover" element={<CoverPage/>} />
     </Routes>
     </BrowserRouter>
   )
