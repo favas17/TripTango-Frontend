@@ -11,4 +11,10 @@
     .inputs{
         @apply w-full px-3 py-2 text-gray-200 bg-[#753939] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400
     }
+    .sort-op {
+        @apply flex items-center gap-x-2 font-semibold
+    }
+    .filtering{
+        @apply border-none outline-none w-56 h-14 placeholder:ps-3
+    }
 }

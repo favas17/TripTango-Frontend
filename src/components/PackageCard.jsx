@@ -1,13 +1,13 @@
 import { CiCalendar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
-import photo from "../assets/Brazil.png"
+import photo from "../assets/pak.png"
 
 
 function PackageCard(){
-    
+    // hover:scale-105 duration-100
     return(
-        <div className="flex flex-col hover:scale-105 duration-100">
+        <div className="flex flex-col ">
             <div>
                 <img className="w-52 h-44 object-cover object-center rounded-lg" src={photo} alt="" />
             </div>
