@@ -6,6 +6,8 @@ import UserHome from "./pages/user-side/UserHome"
 import PackagesPage from "./pages/user-side/PackagesPage"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import PlacesCard from "./components/PlacesCard"
+import PkgInterface from "./components/PkgInterface"
+import DetailsPage from "./pages/user-side/DetailsPage"
 function App() {
 
   return (
@@ -18,6 +20,8 @@ function App() {
       <Route path="/UserHome" element={<UserHome/>} />
       <Route path="/Packages" element={<PackagesPage/>} />
       <Route path="/package" element={<PlacesCard/>} />
+      <Route path="/PkgInter" element={<PkgInterface/>} />
+      <Route path="/DetailsPage" element={<DetailsPage/>} />
     </Routes>
     </BrowserRouter>
   )
