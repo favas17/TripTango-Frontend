@@ -1,11 +1,36 @@
+import React,{useState} from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Yupval } from "../../utils/YupVal";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../instatnce/axiosInstance";
 import bgimg from "../../assets/a.png"
+import { useNavigate } from "react-router-dom";
 
 function UserSignup() {
-  const onSubmit = (data) => {
-    console.log(data);
+  const navigate = useNavigate();
+
+  const [errors,setErrors] = useState(null)
+
+  // handling submit
+  const onSubmit = async (data,{setSubmitting}) => {
+
+    try{
+      // sending request to otp post
+      const response = await axiosInstance.post("signup",data);
+      console.log(response)
+      // checking the response
+      if(response.status === 201){
+        navigate("/otpPage")
+      }
+    }catch(error){
+      if(error.response){
+        setErrors(error.response.data.message)
+      }else{
+        setErrors("Network error please try again later")
+      }
+    }finally{
+      setSubmitting(false)
+    }
   };
 
   return (
@@ -74,6 +99,8 @@ function UserSignup() {
                 className="text-red-500 mt-1"
               />
             </div>
+            {errors && <div className="my-4 w-full font-bold flex justify-center text-red-500">{errors}</div>}
+
             <div className="flex justify-evenly">
               <button
                 type="submit"
@@ -88,6 +115,8 @@ function UserSignup() {
             </div>
           </Form>
         </Formik>
+
+        
       </div>
     </div>
   );
