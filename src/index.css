@@ -11,8 +11,11 @@
     .inputs{
         @apply w-full px-3 py-2 text-gray-200 bg-[#753939] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400
     }
-    .sort-op {
+    /* .sort-op {
         @apply flex items-center font-semibold md:text-[1rem] text-[0.9rem]
+    } */
+    .nav-btn {
+        @apply flex items-center 
     }
     .filtering{
         @apply border-none outline-none w-full md:w-full lg:w-full h-14 placeholder:ps-3

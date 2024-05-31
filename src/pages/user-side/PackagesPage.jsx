@@ -8,12 +8,14 @@ import { LuCalendarDays } from "react-icons/lu";
 import { FaSortAmountUp } from "react-icons/fa";
 import { FaSortAmountDownAlt } from "react-icons/fa";
 import { LuPencilLine } from "react-icons/lu";
+import bgImg from "../../assets/WithusBg.png"
+
 function PackagesPage(){
     
     return(
         <div className="w-full">
             <div className="">
-            <CoverPage label={label}/>
+            <CoverPage bgImg={bgImg} label={label}/>
             </div>
             {/* inner container */}
             <div className=" relative  md:px-28 lg:px-64">

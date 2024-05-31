@@ -1,10 +1,10 @@
-import tbg from "../../assets/WithusBg.png"
+
 import Header from "../Header"
-function CoverPage({label}){
+function CoverPage({bgImg,label,}){
 
     return(
         <div className=" w-full h-[25rem] md:h-[30rem]">
-            <div className=" w-full h-full bg-center bg-cover" style={{backgroundImage: `url(${tbg})`}}>
+            <div className=" w-full h-full bg-center bg-cover" style={{backgroundImage: `url(${bgImg})`}}>
                 <Header/>
 
                <div className=" flex flex-col justify-center pb-32 items-center w-full  h-full">

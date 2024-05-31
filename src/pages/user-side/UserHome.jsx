@@ -39,7 +39,7 @@ function UserHome() {
         </div>
 
         {/* offer section */}
-        <div className="h-72  md:h-80 lg:h-96 mb-3 ">
+        <div className="h-72  md:h-80 lg:h-96 my-5 ">
             <div className="flex justify-center md:mt-6">
             <h1 className="font-bold text-[1.5rem] md:text-[3rem]">We Offer Best Services</h1>
             </div>
@@ -97,7 +97,7 @@ function UserHome() {
             <p>Packages</p>
             <h1 className="text-[2.5rem] text-[#181E4B] mb-12 font-bold">Travel Packages</h1>
             </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-5 gap-x-3 lg:gap-x-9 lg:gap-y-8 lg:ms-7 ">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-5 p-5 gap-x-4  lg:gap-x-9 lg:gap-y-8 lg:ms-7 ">
             <PackageCard/>
             <PackageCard/>
             <PackageCard/>

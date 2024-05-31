@@ -8,6 +8,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 import PlacesCard from "./components/PlacesCard"
 import PkgInterface from "./components/PkgInterface"
 import DetailsPage from "./pages/user-side/DetailsPage"
+import OtpPage from "./pages/user-side/OtpPage"
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path="/package" element={<PlacesCard/>} />
       <Route path="/PkgInter" element={<PkgInterface/>} />
       <Route path="/DetailsPage" element={<DetailsPage/>} />
+      <Route path="/OtpPage" element={<OtpPage/>} />
     </Routes>
     </BrowserRouter>
   )
