@@ -15,15 +15,15 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<UserHome/>}/>
-      <Route path="/UserSign" element={<UserSignup/>} />
-      <Route path="/AdminLogin" element={<AdminLogin/>} />
-      <Route path="/AdminSignup" element={<AdminSignup/>} />
-      <Route path="/UserHome" element={<UserHome/>} />
+      <Route path="/userSign" element={<UserSignup/>} />
+      <Route path="/adminLogin" element={<AdminLogin/>} />
+      <Route path="/adminSignup" element={<AdminSignup/>} />
+      <Route path="/userHome" element={<UserHome/>} />
       <Route path="/Packages" element={<PackagesPage/>} />
       <Route path="/package" element={<PlacesCard/>} />
-      <Route path="/PkgInter" element={<PkgInterface/>} />
-      <Route path="/DetailsPage" element={<DetailsPage/>} />
-      <Route path="/OtpPage" element={<OtpPage/>} />
+      <Route path="/pkgInter" element={<PkgInterface/>} />
+      <Route path="/oetailsPage" element={<DetailsPage/>} />
+      <Route path="/otpPage" element={<OtpPage/>} />
     </Routes>
     </BrowserRouter>
   )

@@ -1,7 +1,7 @@
-const axios = require("axios")
+import axios from "axios"
 
 const axiosInstance = axios.create({
-    baseUrl:"http://localhost:8989",
+    baseURL:"http://localhost:8989",
     withCredintial:true
 })
 
