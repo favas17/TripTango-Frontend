@@ -1,5 +1,5 @@
 
-import Header from "../Header"
+import Header from "../Header/Header"
 function CoverPage({bgImg,label,}){
 
     return(

@@ -1,7 +1,7 @@
 import { CiCalendar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
-import photo from "../assets/pak.png"
+import photo from "../../assets/pak.png"
 
 
 function PackageCard(){

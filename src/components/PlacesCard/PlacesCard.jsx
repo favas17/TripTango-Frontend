@@ -1,4 +1,4 @@
-import places from "../assets/pak.png"
+import places from "../../assets/pak.png"
 import { CiLocationOn } from "react-icons/ci";
 
 

@@ -2,7 +2,7 @@ import React,{useState} from "react"
 
 function PackageNav({icons,names,handleOption}){
 
- const {LuPencilLine,LuCalendarDays,FaSortAmountUp,FaSortAmountDownAlt} = icons
+ const {IoIosInformationCircleOutline,CiCalendar,IoLocationOutline,IoImagesOutline} = icons
 
  const [isOpen,setIsOpen] = useState(false);
 
@@ -35,11 +35,11 @@ function PackageNav({icons,names,handleOption}){
 
 
     <div className={`${isOpen ? "block" : "hidden"} space-y-5 mb-2 md:space-y-0 md:mb-0 md:w-full md:flex md:justify-evenly`}>
-        <button className="nav-btn" onClick={()=> handleOption("info")} ><LuCalendarDays/> {names.FCol} 
+        <button className="nav-btn" onClick={()=> handleOption("info")} ><IoIosInformationCircleOutline/> {names.FCol} 
         </button>
-        <button className="nav-btn" onClick={()=> handleOption("plan")}> <FaSortAmountUp/> {names.SCol}</button>
-        <button className="nav-btn" onClick={()=> handleOption("location")}> <FaSortAmountDownAlt/> {names.TCol}</button>
-        <button className="nav-btn" onClick={()=> handleOption("gallery")}> <LuPencilLine/> {names.FORCol} </button>
+        <button className="nav-btn" onClick={()=> handleOption("plan")}> <IoLocationOutline/> {names.SCol}</button>
+        <button className="nav-btn" onClick={()=> handleOption("location")}> <CiCalendar/> {names.TCol}</button>
+        <button className="nav-btn" onClick={()=> handleOption("gallery")}> <IoImagesOutline/> {names.FORCol} </button>
 
     </div>
 

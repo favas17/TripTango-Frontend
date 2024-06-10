@@ -5,10 +5,11 @@ import AdminSignup from "./pages/admin-side/AdminSignup"
 import UserHome from "./pages/user-side/UserHome"
 import PackagesPage from "./pages/user-side/PackagesPage"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-import PlacesCard from "./components/PlacesCard"
-import PkgInterface from "./components/PkgInterface"
+import PlacesCard from "./components/PlacesCard/PlacesCard"
+// import PkgInterface from "./components/PackageInterface/PkgInterface"
 import DetailsPage from "./pages/user-side/DetailsPage"
 import OtpPage from "./pages/user-side/OtpPage"
+import AgentHome from "./pages/agent-side/AgentHome"
 function App() {
 
   return (
@@ -21,9 +22,10 @@ function App() {
       <Route path="/userHome" element={<UserHome/>} />
       <Route path="/Packages" element={<PackagesPage/>} />
       <Route path="/package" element={<PlacesCard/>} />
-      <Route path="/pkgInter" element={<PkgInterface/>} />
-      <Route path="/oetailsPage" element={<DetailsPage/>} />
+      <Route path="/packagesPage" element={<PackagesPage/>} />
+      <Route path="/DetailsPage" element={<DetailsPage/>} />
       <Route path="/otpPage" element={<OtpPage/>} />
+      <Route path="/AgentHome" element={<AgentHome/>} />
     </Routes>
     </BrowserRouter>
   )

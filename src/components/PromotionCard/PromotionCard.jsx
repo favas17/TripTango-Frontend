@@ -1,4 +1,4 @@
-import promo from "../assets/promo.png"
+import promo from "../../assets/promo.png"
 function PromotionCard(){
 
     return(

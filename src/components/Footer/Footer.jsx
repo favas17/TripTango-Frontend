@@ -1,8 +1,8 @@
-import logo from '../assets/logoBlack.png'
-import X from "../assets/X.png"
-import linkdeln from "../assets/linkedin.png"
-import insta from "../assets/messenger.png"
-import whatsapp from "../assets/twoo.png"
+import logo from '../../assets/logoBlack.png'
+import X from "../../assets/X.png"
+import linkdeln from "../../assets/linkedin.png"
+import insta from "../../assets/messenger.png"
+import whatsapp from "../../assets/twoo.png"
 
 function Footer(){
 

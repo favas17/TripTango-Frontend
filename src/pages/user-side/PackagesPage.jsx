@@ -1,9 +1,9 @@
 import CoverPage from "../../components/Cover/CoverPage"
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footer/Footer"
 import label from "../../assets/TravelWithUs.png"
 import TravLug from "../../assets/travLug.png"
 import Snitch from "../../assets/sni.png"
-import PackageCard from "../../components/PackageCard";
+import PackageCard from "../../components/PackageCard/PackageCard";
 import { LuCalendarDays } from "react-icons/lu";
 import { FaSortAmountUp } from "react-icons/fa";
 import { FaSortAmountDownAlt } from "react-icons/fa";

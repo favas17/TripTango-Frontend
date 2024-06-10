@@ -1,23 +1,23 @@
 import React, {useState} from "react";
-import PkgInterface from "../../components/PkgInterface"
+// import PkgInterface from "../../components/PackageInterface/PkgInterface"
 import CoverPage from "../../components/Cover/CoverPage"
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 import PackageNav from "../../components/PackageNav/PackageNav";
-import Button from "../../components/Button/ClickButton";
-import BookForm from "../../components/BookForm/BookForm";
+// import Button from "../../components/Button/ClickButton";
+import BookForm from "../../components/BookForm/BookForm";  
 import Information from "../../components/DetailParts/Informtion";
 import TourPlan from "../../components/DetailParts/TourPlan";
 import Location from "../../components/DetailParts/Location";
 import Gallery from "../../components/DetailParts/Gallery";
 import DetailsBg from "../../assets/Landscapes.png"
 import Snitch from "../../assets/sni.png"
-import PackageCard from "../../components/PackageCard";
+// import PackageCard from "../../components/PackageCard/PackageCard";
 import TravLug from "../../assets/travLug.png"
 import bgImg from "../../assets/details.png"
-import { LuCalendarDays } from "react-icons/lu";
-import { FaSortAmountUp } from "react-icons/fa";
-import { FaSortAmountDownAlt } from "react-icons/fa";
-import { LuPencilLine } from "react-icons/lu";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+import { CiCalendar } from "react-icons/ci";
+import { IoLocationOutline } from "react-icons/io5";
+import { IoImagesOutline } from "react-icons/io5";
 function DetailsPage(){
 
     // create a state for storing teh selected option
@@ -47,18 +47,18 @@ function DetailsPage(){
 
     // icons
     const icons = {
-        LuPencilLine,
-        FaSortAmountDownAlt,
-        FaSortAmountUp,
-        LuCalendarDays,
+        IoIosInformationCircleOutline,
+        CiCalendar,
+        IoLocationOutline,
+        IoImagesOutline,
     }
 
     // names
     const names = {
-        FCol:"Date",
-        SCol:"Price Low To High",
-        TCol:"Price High To Low",
-        FORCol:"Name(A-Z)",
+        FCol:"Information",
+        SCol:"Tour Plan",
+        TCol:"Location",
+        FORCol:"Gallery",
     }
     
     return(
