@@ -1,20 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import { Validation } from "../../utils/AddPackageYup";
+import axiosInstance from "../../instatnce/axiosInstance";
 
 function AddPackage() {
-  const onSubmit = (values) => {
-    console.log(values);
-  };
+  const [selectedImages,setSelectedImages] = useState([])
+  const onSubmit = async (values) => {
+    // console.log(values,"values")
+    try{
+      const formData = new FormData()
+      
+      Object.entries(values).forEach(([key,value])=>{
+        if(key=="days"){
+          formData.append(key,JSON.stringify(value))
+        }else{
+          formData.append(key,value)
+        }
+      })
+
+      selectedImages.forEach((image)=>{
+        formData.append('images',image)
+      })
+
+
+      const response = await axiosInstance.post("/addPackage",formData,{
+        headers: {
+          'Content-Type':'multipart/form-data'
+        }
+      });
+      console.log(response.data,"res")
+    }
+    catch(err){
+      console.log(err)
+    }
+
+    };
 
   return (
-    <div className="container  mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-6">Add Package</h1>
 
       <Formik
         initialValues={{
-          name: "",
+          packageName: "",
           location: "",
+          price: "",
+          details: "",
           duration: 1,
           days: [{ dayNumber: 1, placeDetails: "", stays: [""], foods: [""] }],
           images: [],
@@ -29,12 +60,12 @@ function AddPackage() {
             <div className="mb-4">
               <Field
                 type="text"
-                name="name"
+                name="packageName"
                 placeholder="Enter package name"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
               <ErrorMessage
-                name="name"
+                name="packageName"
                 component="div"
                 className="mt-1 text-sm text-red-500"
               />
@@ -49,6 +80,34 @@ function AddPackage() {
               />
               <ErrorMessage
                 name="location"
+                component="div"
+                className="mt-1 text-sm text-red-500"
+              />
+            </div>
+
+            <div className="mb-4">
+              <Field
+                type="number"
+                name="price"
+                placeholder="Enter price"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+              <ErrorMessage
+                name="price"
+                component="div"
+                className="mt-1 text-sm text-red-500"
+              />
+            </div>
+
+            <div className="mb-4">
+              <Field
+                type="text"
+                name="details"
+                placeholder="Enter details"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+              <ErrorMessage
+                name="details"
                 component="div"
                 className="mt-1 text-sm text-red-500"
               />
@@ -167,9 +226,8 @@ function AddPackage() {
                           <button
                             type="button"
                             onClick={() => remove(index)}
-                            className="text-red-500 hover:text-red-700"
-                          >
-                            Remove
+                            className="bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-600"                          >
+                            {`remove day ${values.days[index].dayNumber} field`}
                           </button>
                         )}
                       </div>
@@ -202,6 +260,8 @@ function AddPackage() {
                 id="images"
                 name="images"
                 type="file"
+                multiple
+                onChange={(e)=>setSelectedImages(Array.from(e.target.files))}
                 className="block w-full px-3 py-2 border border-gray-300
                 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
@@ -258,3 +318,4 @@ function AddPackage() {
 }
 
 export default AddPackage;
+  

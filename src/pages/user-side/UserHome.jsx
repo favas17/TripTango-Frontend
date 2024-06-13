@@ -9,6 +9,7 @@ import secBg from "../../assets/secbg.png"
 import line from "../../assets/Line.png"
 import paris from "../../assets/paris.png"
 import chat from "../../assets/chat.png"
+
 function UserHome() {
     return (
         <div>
@@ -98,16 +99,9 @@ function UserHome() {
             <h1 className="text-[2.5rem] text-[#181E4B] mb-12 font-bold">Travel Packages</h1>
             </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-5 p-5 gap-x-4  lg:gap-x-9 lg:gap-y-8 lg:ms-7 ">
+
             <PackageCard/>
-            <PackageCard/>
-            <PackageCard/>
-            <PackageCard/>
-            <PackageCard/>
-            <PackageCard/>
-            <PackageCard/>
-            <PackageCard/>
-            <PackageCard/>
-            <PackageCard/>
+            
         </div>
         </div>
 

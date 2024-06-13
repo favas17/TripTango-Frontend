@@ -1,8 +1,10 @@
 import * as Yup from "yup"
 
 export const Validation = Yup.object({
-    name: Yup.string().required("Please fill name"),
+    packageName: Yup.string().required("Please fill name"),
     location: Yup.string().required("please fill location"),
+    price: Yup.number().required("Please enter price"),
+    details: Yup.string().required("Please enter details"),
     duration: Yup.number().min(1,"Duration need atleast one day").required("Please fill the duration"),
     // days: Yup.array().of(
     //     Yup.object().shape({
@@ -11,6 +13,6 @@ export const Validation = Yup.object({
     //         foods: Yup.string().required("Please fill the foods"),
     //     })
     // ),
-    mapLocation: Yup.string().required("Map location is required"),
+    // mapLocation: Yup.string().required("Map location is required"),
     category: Yup.string().required("Category is required"),
 });

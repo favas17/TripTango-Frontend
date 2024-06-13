@@ -1,31 +1,18 @@
-import UserLogin from "./pages/user-side/LoginPage"
-import UserSignup from "./pages/user-side/SignupPage"
-import AdminLogin from "./pages/admin-side/AdminLogin"
-import AdminSignup from "./pages/admin-side/AdminSignup"
-import UserHome from "./pages/user-side/UserHome"
-import PackagesPage from "./pages/user-side/PackagesPage"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-import PlacesCard from "./components/PlacesCard/PlacesCard"
-// import PkgInterface from "./components/PackageInterface/PkgInterface"
-import DetailsPage from "./pages/user-side/DetailsPage"
-import OtpPage from "./pages/user-side/OtpPage"
-import AgentHome from "./pages/agent-side/AgentHome"
+import UserRoutes from "./routes/userRoutes"
+import AdminRoutes from "./routes/adminRoutes"
+import AgentRoutes from "./routes/agentRoutes"
+
 function App() {
 
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<UserHome/>}/>
-      <Route path="/userSign" element={<UserSignup/>} />
-      <Route path="/adminLogin" element={<AdminLogin/>} />
-      <Route path="/adminSignup" element={<AdminSignup/>} />
-      <Route path="/userHome" element={<UserHome/>} />
-      <Route path="/Packages" element={<PackagesPage/>} />
-      <Route path="/package" element={<PlacesCard/>} />
-      <Route path="/packagesPage" element={<PackagesPage/>} />
-      <Route path="/DetailsPage" element={<DetailsPage/>} />
-      <Route path="/otpPage" element={<OtpPage/>} />
-      <Route path="/AgentHome" element={<AgentHome/>} />
+
+      <Route path="/user/*" element={<UserRoutes/>}/>
+      <Route path="/admin/*" element={<AdminRoutes/>} />
+      <Route path="/agent/*" element={<AgentRoutes/>} />
+
     </Routes>
     </BrowserRouter>
   )
