@@ -1,3 +1,6 @@
+import React,{useEffect} from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { fetchPackageDetails } from "../../redux/packageSlice";
 import bgImage from "../../assets/LandingPage.png";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -11,6 +14,15 @@ import paris from "../../assets/paris.png"
 import chat from "../../assets/chat.png"
 
 function UserHome() {
+
+    const dispatch = useDispatch();
+    const {packageDetails,loading,error} = useSelector((state)=>state.packages)
+    console.log(packageDetails,"hyhy")
+
+    useEffect(()=>{
+        dispatch(fetchPackageDetails())
+    },[dispatch])
+    
     return (
         <div>
         <div className="relative w-full bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
@@ -100,8 +112,11 @@ function UserHome() {
             </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-5 p-5 gap-x-4  lg:gap-x-9 lg:gap-y-8 lg:ms-7 ">
 
-            <PackageCard/>
-            
+            {packageDetails.map((pkg)=>(
+                <PackageCard key={pkg._id} pkg={pkg}/>
+            ))}
+           
+
         </div>
         </div>
 

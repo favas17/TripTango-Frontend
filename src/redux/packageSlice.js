@@ -5,9 +5,8 @@ import axiosInstance from "../instatnce/axiosInstance";
 export const fetchPackageDetails = createAsyncThunk(
     'packages/fetchPackageDetails',  //action type prefix
     async ()=>{
-        const response = await axiosInstance.get('packages');
-        const data = await response.json();
-        return data;
+        const response = await axiosInstance.get('/packages');
+        return response.data
     }
 );
 
@@ -28,13 +27,13 @@ const packageSlice = createSlice({
             state.loading = true;
             state.error = null;
         })
-        .addCase(fetchPackageDetails.fulfilled, (state)=>{
+        .addCase(fetchPackageDetails.fulfilled, (state,action)=>{
             state.loading = false;
-            state,packageDetails = action.payload //payload from fulfilled action
+            state.packageDetails = action.payload //payload from fulfilled action
         })
-        .addCase(fetchPackageDetails.rejected, (state)=>{
+        .addCase(fetchPackageDetails.rejected, (state,action)=>{
             state.loading = false;
-            state.error = action.payload;
+            state.error = action.error.message;
         })
     }
 })
