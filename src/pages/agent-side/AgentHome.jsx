@@ -6,10 +6,10 @@ function AgentHome() {
   return (
     <div className="w-full flex h-screen">
       <div className="w-1/6">
-        <AgentSidebar />
+        {/* <AgentSidebar /> */}
       </div>
       <div className="w-5/6 flex flex-col overflow-y-auto">
-        {/* <AgentPackage/> */}
+        <AgentPackage/>
         <AddPackage />
       </div>
     </div>
