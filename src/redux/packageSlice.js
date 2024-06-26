@@ -10,16 +10,24 @@ export const fetchPackageDetails = createAsyncThunk(
     }
 );
 
+export const fetchPackageById = createAsyncThunk(
+    'packages/fetchPackageById',
+    async (packageId)=> {
+        const response = await axiosInstance.get(`/packages/${packageId}`)
+        return response.data
+    }
+)
 
 // slice for fetching packages
 const packageSlice = createSlice({
     name:'packages', //name of the slice
     initialState:{
         packageDetails:[],
+        selectedPackage: null,
         loading:false,
         error:null
     },
-    reducers:{},  //syncchtonous action can be defined here
+    reducers:{},  //syncchronous action can be defined here
     // extra reducer user to define createthunk action or asynchronous actions
     extraReducers: (builder)=>{
         builder
@@ -34,6 +42,18 @@ const packageSlice = createSlice({
         .addCase(fetchPackageDetails.rejected, (state,action)=>{
             state.loading = false;
             state.error = action.error.message;
+        })
+        .addCase(fetchPackageById.pending, (state)=>{
+            state.loading = true;
+            state.error = null;
+        })
+        .addCase(fetchPackageById.fulfilled, (state,action)=>{
+            state.loading = false;
+            state.selectedPackage = action.payload
+        })
+        .addCase(fetchPackageById.rejected, (state,action)=>{
+            state.loading = false;
+            state.error = action.error.message
         })
     }
 })

@@ -1,65 +1,53 @@
-
-function Information(){
-
-    return(
-        <div>
-            {/* head */}
-            <div className="flex items-center">
-                <h1 className="font-bold">Place Name</h1>
-                <p className="font-semibold">1000$/Per Person</p>
-            </div>
-            
-            {/* rating */}
-            <div className="flex items-center">
-                <p>Stars</p>
-                <p>2.k reviews</p>
-            </div>
-            
-            {/* details */}
-            <div>
-                <p>Details</p>
-            </div>
-
-            {/* full Details */}
-            <div className="flex items-center">
-                <h1 className="font-bold">Destintation</h1>
-                <p>:place</p>
-            </div>
-
-            <div className="flex items-center">
-                <h1 className="font-bold">Depature</h1>
-                <p>place</p>
-            </div>
-
-            <div className="flex items-center">
-                <h1 className="font-bold">Depature Time</h1>
-                <p>place</p>
-            </div>
-
-            <div className="flex items-center">
-                <h1 className="font-bold">Return Time</h1>
-                <p>place</p>
-            </div>
-
-            <div className="flex items-center">
-                <h1 className="font-bold">Dress Code</h1>
-                <p>place</p>
-            </div>
-
-            <div className="flex items-center">
-                <h1 className="font-bold">Not Included</h1>
-                <p>place</p>
-            </div>
-
-            <div className="flex items-center">
-                <h1 className="font-bold">Included</h1>
-                <p>place</p>
-            </div>
-
+function Information({ infos }) {
+    if (!infos) {
+      return <div>Loading...</div>;
+    }
+  
+    return (
+      <div className="p-4 rounded-lg shadow-md h-full">
+        {/* Header */}
+        <div className="flex items-center gap-x-8 mb-2">
+          <h1 className="text-2xl font-bold text-customPurple">Switzerland</h1>
+          <p className="text-xl font-semibold text-customRed">1,000 $ / Per Couple</p>
         </div>
-    )
-}
+  
+        {/* Rating */}
+        <div className="flex items-center mb-4">
+          <div className="flex text-yellow-400">
+            ★★★★★
+          </div>
+          <p className="ml-2 text-sm text-gray-600">(2.3k reviews)</p>
+        </div>
+  
+        {/* Description */}
+        <p className="mb-6 text-sm text-gray-700">
+            {infos.details}
+        </p>
+  
+        {/* Details */}
+        <div className="space-y-3 ">
+            
+        <div className="flex gap-x-12">
+           <h3 className="w-32 font-semibold infoFieldsH1">Destination</h3>
+           <p className="">: {infos.location}</p>
+        </div>
 
+        <div className="flex gap-x-12">
+           <h3 className="w-32 font-semibold infoFieldsH1">Destination</h3>
+           <p className="">:dbhvhf</p>
+        </div>
 
+        <div className="flex gap-x-12">
+           <h3 className="w-32 font-semibold infoFieldsH1">Destination</h3>
+           <p className="">: gs</p>
+        </div>
 
-export default Information;
+      </div>
+
+      </div>
+    );
+  }
+  
+
+  
+  export default Information;

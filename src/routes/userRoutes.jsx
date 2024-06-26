@@ -18,7 +18,7 @@ function UserRoutes (){
             <Route path="/signup" element={<UserSignup/>}/>
             <Route path="/userHome" element={<UserHome/>}/>
             <Route path="/packagePage" element={<PackagesPage/>}/>
-            <Route path="/detailsPage" element={<DetailsPage/>}/>
+            <Route path="/detailsPage/:packageId" element={<DetailsPage/>}/>
             <Route path="/otpPage" element={<OtpPage/>}/>
 
         </Routes>

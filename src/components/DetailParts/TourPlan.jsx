@@ -1,8 +1,10 @@
 
-function TourPlan(){
-
+function TourPlan({plan}){
+if(!plan){
+    return <div>Loading...</div>
+}
     return(
-        <div>
+        <div className="rounded-lg shadow-md h-full p-4">
             <h1 className="font-bold">Tour Plan</h1>
 
             {/* days */}

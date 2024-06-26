@@ -12,8 +12,8 @@ function BookForm (){
         <input className="filtering " type="number" name="numTicket" id="numTicket" placeholder="Number of ticket"/>
         <input className="filtering " type="text" name="msg" id="msg" placeholder="Message"/>
 
-        <Button className="px-2 h-7 border-none rounded-md text-white bg-red-500" label="Check Availability"/>
-        <Button className="w-24 h-7 border-none rounded-md text-white bg-red-500" label="Book Now"/>
+        <Button className="px-2 h-7 border-none rounded-md text-white bg-customRed" label="Check Availability"/>
+        <Button className="w-24 h-7 border-none rounded-md text-white bg-customRed" label="Book Now"/>
     </div>
     )
 }

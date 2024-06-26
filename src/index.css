@@ -28,8 +28,17 @@
         @apply flex items-center space-x-2 
     }
 
+    /* info page */
+    .infoFileds{
+        @apply items-center
+    }
+    .infoFieldsH1{
+        @apply text-customRed
+    }
+
     /* agent page */
     .AField{
         @apply border-2 
     }
+
 }

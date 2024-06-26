@@ -1,6 +1,7 @@
 import React,{useEffect} from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { fetchPackageDetails } from "../../redux/packageSlice";
+import { useNavigate } from "react-router-dom";
 import bgImage from "../../assets/LandingPage.png";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -16,12 +17,19 @@ import chat from "../../assets/chat.png"
 function UserHome() {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    // getting the package state from store using useSelector
     const {packageDetails,loading,error} = useSelector((state)=>state.packages)
-    console.log(packageDetails,"hyhy")
 
+    // using useEffect for fetching the package details
     useEffect(()=>{
         dispatch(fetchPackageDetails())
     },[dispatch])
+
+    const handlePackageClick = (packageId)=>{
+        console.log(packageId,"hy")
+        navigate(`/user/detailsPage/${packageId}`)
+    }
     
     return (
         <div>
@@ -113,7 +121,7 @@ function UserHome() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-5 p-5 gap-x-4  lg:gap-x-9 lg:gap-y-8 lg:ms-7 ">
 
             {packageDetails.map((pkg)=>(
-                <PackageCard key={pkg._id} pkg={pkg}/>
+                <PackageCard key={pkg._id} pkg={pkg} onClick={()=> handlePackageClick(pkg._id)}/>
             ))}
            
 

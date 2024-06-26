@@ -27,7 +27,7 @@ function AgentPackage () {
 
                 <tbody>
                     {packageDetails.map((pkg)=>(
-                        <tr className=" ">
+                        <tr key={pkg._id} className="">
                         <td className="AField">{pkg.packageName}</td>
                         <td className="AField">{pkg.details}</td>
                         <td className="AField">{pkg.price}</td>

@@ -3,10 +3,10 @@ import { FaStar } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 
 
-function PackageCard({pkg}){
-console.log(pkg)
+function PackageCard({pkg,onClick}){
+    
     return(
-        <div className="flex flex-col ">
+        <div className="flex flex-col " onClick={onClick}>
             <div>
                 <img className="w-52 h-44 object-cover object-center rounded-lg" src={`http://localhost:8989/uploads/${pkg.images[0]}`} alt="" />
             </div>
