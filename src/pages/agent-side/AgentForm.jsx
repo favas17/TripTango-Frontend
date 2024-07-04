@@ -71,6 +71,32 @@ function AgentForm () {
 
                     <div>
                         <Field 
+                            type="password"
+                            name="password"
+                            placeholder="Enter youre password"
+                        />
+                        <ErrorMessage
+                        name="password"
+                        component="div"
+                        className="mt-1 text-sm text-red-500"
+                        />
+                    </div>
+
+                    <div>
+                        <Field 
+                            type="password"
+                            name="confirmPassword"
+                            placeholder="Confirm youre password"
+                        />
+                        <ErrorMessage
+                        name="confirmPassword"
+                        component="div"
+                        className="mt-1 text-sm text-red-500"
+                        />
+                    </div>
+
+                    <div>
+                        <Field 
                             type="number"
                             name="phone"
                             placeholder="Enter youre contact"
