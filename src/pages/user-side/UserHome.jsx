@@ -34,9 +34,6 @@ function UserHome() {
     return (
         <div>
         <div className="relative w-full bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
-                    {/* Header */}
-                        <Header />
-
                         {/* landing area */}
             <div className="flex flex-col px-4 md:px-14  py-10 md:py-28">
                 <h1 className="text-[2rem]  font-bold w-full md:w-3/5  pb-5 text-white">
@@ -129,9 +126,9 @@ function UserHome() {
         </div>
 
         {/* Footer */}
-        <div className="md:mt-16">
+        {/* <div className="md:mt-16">
           <Footer/>
-        </div>
+        </div> */}
 
         </div>
     );

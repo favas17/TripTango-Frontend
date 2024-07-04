@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Logo from "../../assets/logo.png";
+import { Link } from 'react-router-dom';
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ function Header() {
     };
 
     return (
-        <div className="relative flex flex-col md:flex-row justify-between px-4 sm:px-8 md:px-16 lg:px-28 xl:px-56 py-4 items-center text-white">
+        <div className="absolute z-10 w-full flex flex-col md:flex-row justify-between px-4 sm:px-8 md:px-16 lg:px-28 xl:px-56 py-4 items-center text-white">
             <div className=" flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
                 <img className="object-cover h-10" src={Logo} alt="Logo" />
                 <button
@@ -36,7 +37,7 @@ function Header() {
                 <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
                     <li className="nav-items"><button>Home</button></li>
                     <li className="nav-items"><button>About</button></li>
-                    <li className="nav-items"><button>Become Agent</button></li>
+                    <Link to={'/user/agentForm'}><li className="nav-items"><button>Become Agent</button></li></Link>
                     <li className="nav-items"><button>Login</button></li>
                     <li className="nav-items"><button>Signup</button></li>
                 </ul>

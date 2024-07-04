@@ -7,19 +7,25 @@ import UserHome from "../pages/user-side/UserHome"
 import PackagesPage from "../pages/user-side/PackagesPage"
 import DetailsPage from "../pages/user-side/DetailsPage"
 import OtpPage from "../pages/user-side/OtpPage"
+import UserLayout from "../Layout/userLayout"; 
+import AgentForm from "../pages/agent-side/AgentForm";
 
 function UserRoutes (){
 
     return(
         <Provider store={store}>
-        <Routes>
 
+        <Routes>
             <Route path="/login" element={<UserLogin/>}/>
             <Route path="/signup" element={<UserSignup/>}/>
-            <Route path="/userHome" element={<UserHome/>}/>
-            <Route path="/packagePage" element={<PackagesPage/>}/>
-            <Route path="/detailsPage/:packageId" element={<DetailsPage/>}/>
             <Route path="/otpPage" element={<OtpPage/>}/>
+            <Route path="/agentForm" element={<AgentForm/>}/>
+
+            <Route path="/" element={<UserLayout/>}>
+                 <Route path="/userHome" element={<UserHome/>}/>
+                 <Route path="/packagePage" element={<PackagesPage/>}/>
+                 <Route path="/detailsPage/:packageId" element={<DetailsPage/>}/>
+            </Route>
 
         </Routes>
         </Provider>

@@ -21,8 +21,10 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import { CiCalendar } from "react-icons/ci";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoImagesOutline } from "react-icons/io5";
+import ScrollToTop from "../../utils/scrollTop";
+
 function DetailsPage(){
-    
+    ScrollToTop();
     const {packageId} = useParams();
     const dispatch = useDispatch();
     const {selectedPackage,loading,error} = useSelector((state)=>state.packages)
@@ -120,9 +122,9 @@ function DetailsPage(){
             </div>
 
             {/* Footer */}
-            <div>
+            {/* <div>
             <Footer/>
-            </div>
+            </div> */}
         </div>
         
         </>

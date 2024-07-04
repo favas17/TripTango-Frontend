@@ -74,9 +74,9 @@ function PackagesPage(){
             </div>
 
             {/* Footer */}
-            <div>
+            {/* <div>
             <Footer/>
-            </div>
+            </div> */}
         </div>
     )
 }
