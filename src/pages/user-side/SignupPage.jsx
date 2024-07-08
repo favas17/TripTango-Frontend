@@ -20,7 +20,7 @@ function UserSignup() {
       console.log(response)
       // checking the response
       if(response.status === 201){
-        navigate("/otpPage")
+        navigate("/user/otpPage")
       }
     }catch(error){
       if(error.response){

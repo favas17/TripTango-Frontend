@@ -18,11 +18,12 @@ function AdminSidebar () {
             </div>
             </Link>
 
-            <div className="nav-buttons">
+           <Link to={'agentList'}> 
+           <div className="nav-buttons">
             <GrChatOption /><button className="sideNav">Agents</button>
             </div>
-            
-            <Link to={"/agent/addPackage"}>
+            </Link>
+            <Link to={"userList"}>
             <div className="nav-buttons">
             <IoMdAdd /><button className="sideNav">Users</button>
             </div>

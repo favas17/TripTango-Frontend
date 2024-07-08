@@ -19,17 +19,31 @@ function Applications () {
         fetchApplication();
     },[])
 
-    const handleAccept = (acceptId)=>{
+    const handleAccept = async (acceptId)=>{
         try{
             console.log(acceptId,"frot")
-        const response = axiosInstance.put(`acceptAgent/${acceptId}`);
-        if(response){
-            setApplication(application.filter(agent=>agent._id !== acceptId))
+        const response =await axiosInstance.put(`acceptAgent/${acceptId}`);
+        if(response.status === 200){
+            setApplication(application.filter(agent => agent._id !== acceptId))
         }
         }catch(error){
             console.error("Failed to accept",error)
         }
     }
+
+    const handleDelete = async (deleteId) =>{
+        try{
+            const response = await axiosInstance.delete(`deleteAgent/${deleteId}`);
+            if(response.status === 200){
+                setApplication(application.filter(agent._id !== deleteId))
+            }
+        }catch(error){
+            console.error("Failed to delete",error)
+        }
+    }
+
+
+
 
     return(
 
@@ -37,7 +51,7 @@ function Applications () {
             <table className="w-full">
                 <thead>
                     <tr className="">
-                    <th className="AField"></th>
+                    <th className="AField">Name</th>
                     <th className="AField">Agency name</th>
                     <th className="AField">Email</th>
                     <th className="AField">Phone</th>
@@ -57,7 +71,7 @@ function Applications () {
                         <td className="AField">{agent.email}</td>
                         <td className="AField">{agent.phone}</td>
                         <td className="AField">{agent.address}</td>
-                        <td className="AField">Reject</td>
+                        <td className="AField"><button onClick={()=> handleDelete(agent._id)}>Reject</button></td>
                         <td className="AField"><button onClick={()=>handleAccept(agent._id)}>Accept</button></td>
                     </tr>
                     ))}
