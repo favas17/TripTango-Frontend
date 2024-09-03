@@ -28,7 +28,7 @@ function DetailsPage(){
     const {packageId} = useParams();
     const dispatch = useDispatch();
     const {selectedPackage,loading,error} = useSelector((state)=>state.packages)
-    // console.log(selectedPackage,"hyhy")
+    // console.log(selectedPackage,"selocted")
 
     useEffect(() => {
         dispatch(fetchPackageById(packageId))
@@ -108,7 +108,7 @@ function DetailsPage(){
                         </div>
 
                         {/* inputs */}
-                        <BookForm/>
+                        <BookForm packageId={packageId}/>
                     </div>  
 
                     {/* bottom image */}
