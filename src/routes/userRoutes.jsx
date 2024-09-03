@@ -9,6 +9,7 @@ import DetailsPage from "../pages/user-side/DetailsPage"
 import OtpPage from "../pages/user-side/OtpPage"
 import UserLayout from "../Layout/userLayout"; 
 import AgentForm from "../pages/agent-side/AgentForm";
+import CheckoutPage from "../pages/user-side/CheckoutPage";
 
 function UserRoutes (){
 
@@ -25,6 +26,7 @@ function UserRoutes (){
                  <Route path="/userHome" element={<UserHome/>}/>
                  <Route path="/packagePage" element={<PackagesPage/>}/>
                  <Route path="/detailsPage/:packageId" element={<DetailsPage/>}/>
+                 <Route path="/checkoutPage" element={<CheckoutPage/>}/>
             </Route>
 
         </Routes>

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Button from "../Button/ClickButton";
-
+import { useNavigate } from 'react-router-dom';
 function BookForm({ packageId, packagePrice }) {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,6 +23,8 @@ console.log(formData,"data")
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('formData', JSON.stringify(formData));
+    
+    navigate("/user/checkoutPage")
   };
 
   return (
