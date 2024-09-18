@@ -28,6 +28,8 @@ function DetailsPage(){
     const {packageId} = useParams();
     const dispatch = useDispatch();
     const {selectedPackage,loading,error} = useSelector((state)=>state.packages)
+    const user = useSelector((state) => state.user); 
+    console.log(user,"userdet")
     // console.log(selectedPackage,"selocted")
 
     useEffect(() => {
