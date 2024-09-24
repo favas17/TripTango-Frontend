@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from "../Button/ClickButton";
 import { useNavigate } from 'react-router-dom';
-function BookForm({ packageId, packagePrice }) {
+function BookForm({ packageId, userId }) {
 
   const navigate = useNavigate();
 
@@ -13,6 +13,7 @@ function BookForm({ packageId, packagePrice }) {
     numPerson: 1,
     msg: '',
     packageId: packageId,
+    userId: userId,
   });
 console.log(formData,"data")
 

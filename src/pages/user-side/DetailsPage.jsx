@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
+import { jwtDecode } from "jwt-decode";
 import { fetchPackageById } from "../../redux/packageSlice";
 // import PkgInterface from "../../components/PackageInterface/PkgInterface"
 import CoverPage from "../../components/Cover/CoverPage"
@@ -39,6 +40,15 @@ function DetailsPage(){
     // create a state for storing teh selected option
     const [selectedOption,setSelectedOption] = useState("info")
 
+    // geting userId from tocken
+    const token = localStorage.getItem('authToken')
+    let userId = null;
+    // if there is tocken then get the user id
+    if(token){
+        const decode = jwtDecode(token); //decode the token
+        userId = decode.userId;
+    }
+    console.log(userId,"useridddd")
     // handles the options change
     const handleOptionChange = (option)=>{
         setSelectedOption(option);
@@ -110,7 +120,7 @@ function DetailsPage(){
                         </div>
 
                         {/* inputs */}
-                        <BookForm packageId={packageId}/>
+                        <BookForm packageId={packageId} userId={userId}/>
                     </div>  
 
                     {/* bottom image */}

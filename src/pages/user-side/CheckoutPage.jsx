@@ -11,6 +11,7 @@ function CheckoutPage({ packages }) {
 
   useEffect(() => {
     const savedFormData = JSON.parse(localStorage.getItem('formData'));
+    console.log(savedFormData,"saved form data")
     if (savedFormData) {
       setFormData(savedFormData);
       dispatch(fetchPackageById(savedFormData.packageId));
