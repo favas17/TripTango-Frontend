@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPackageById } from "../../redux/packageSlice";
 import axiosInstance from "../../instatnce/axiosInstance";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutPage({ packages }) {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { selectedPackage, loading, error } = useSelector((state) => state.packages);
   const [formData, setFormData] = useState({});
@@ -30,32 +32,36 @@ function CheckoutPage({ packages }) {
     try {
       // Step 1: Create an order on your server
       const orderResponse = await axiosInstance.post("/createOrder", {
-        amount: totalPrice * 100, // Razorpay expects amount in paise
+        amount: totalPrice * 100,
         currency: "INR",
         receipt: `receipt_${Date.now()}`,
       });
 
       const options = {
-        key: "rzp_test_GxkKU3BnKyKe6Z", // Your Razorpay key
+        key: "rzp_test_GxkKU3BnKyKe6Z", // Razorpay key
         amount: totalPrice * 100,
         currency: "INR",
         name: "TripTango",
         description: "Package Booking",
         order_id: orderResponse.data.orderId,
         handler: async function (response) {
-          // Step 2: Send the payment response to the backend for verification
+          // Send the payment response to the backend for verification
           try {
-            await axiosInstance.post("/verifyPayment", {
+           const verificationResponse = await axiosInstance.post("/verifyPayment", {
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
               orderDetails: {
-                userId: formData.userId, // Assuming you have the userId in formData
+                userId: formData.userId,
                 packageId: selectedPackage._id,
                 totalPrice: totalPrice,
               },
             });
-            alert("Payment successful and verified!");
+
+            const { orderId, finalTotalPrice } = verificationResponse.data;
+            localStorage.setItem('orderDetails', JSON.stringify({ orderId, totalPrice:finalTotalPrice}));
+            navigate('/user/successPage');
+            
           } catch (error) {
             console.error("Error verifying payment:", error);
             alert("Payment verification failed!");

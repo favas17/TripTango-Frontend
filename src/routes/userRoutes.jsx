@@ -10,6 +10,7 @@ import OtpPage from "../pages/user-side/OtpPage"
 import UserLayout from "../Layout/userLayout"; 
 import AgentForm from "../pages/agent-side/AgentForm";
 import CheckoutPage from "../pages/user-side/CheckoutPage";
+import PaymentSuccessPage from "../pages/user-side/PaymentSuccessPage";
 
 function UserRoutes (){
 
@@ -27,6 +28,7 @@ function UserRoutes (){
                  <Route path="/packagePage" element={<PackagesPage/>}/>
                  <Route path="/detailsPage/:packageId" element={<DetailsPage/>}/>
                  <Route path="/checkoutPage" element={<CheckoutPage/>}/>
+                 <Route path="/successPage" element={<PaymentSuccessPage/>}/>
             </Route>
 
         </Routes>
